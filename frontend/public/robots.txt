@@ -1,0 +1,33 @@
+# robots.txt for Karno.ir
+
+User-agent: *
+Allow: /
+
+# Disallow admin pages
+Disallow: /admin/
+Disallow: /admin/*
+
+# Disallow cart and checkout processes
+Disallow: /cart
+Disallow: /checkout
+
+# Disallow user account pages
+Disallow: /profile/
+Disallow: /profile/*
+Disallow: /orders
+Disallow: /addresses
+
+# Disallow error pages
+Disallow: /404
+Disallow: /error
+Disallow: /500
+
+# Crawl delays for heavy crawlers
+User-agent: Googlebot
+Crawl-delay: 1
+
+User-agent: bingbot
+Crawl-delay: 2
+
+# Sitemap location
+Sitemap: https://karno.ir/sitemap.xml 

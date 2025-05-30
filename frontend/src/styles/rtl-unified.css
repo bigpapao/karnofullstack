@@ -1,0 +1,356 @@
+/* 
+ * Unified RTL and Persian Language Support
+ * Combines general RTL layout rules and Persian-specific styles
+ * Optimized for Material UI and custom components
+ */
+
+/* Base direction and text alignment */
+[dir="rtl"], 
+html[dir="rtl"], 
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+}
+
+/* Persian font family settings */
+html[dir="rtl"] {
+  font-family: 'Vazirmatn', 'IRANSans', Tahoma, Arial, sans-serif;
+}
+
+/* LTR settings */
+[dir="ltr"],
+html[dir="ltr"],
+html[dir="ltr"] body {
+  direction: ltr;
+  text-align: left;
+  font-family: 'Roboto', 'Vazirmatn', Arial, sans-serif;
+}
+
+/* Persian content enhancements */
+.persian-content {
+  font-feature-settings: "ss01"; /* Persian numerals */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography - RTL/Persian */
+[dir="rtl"] h1, 
+[dir="rtl"] h2, 
+[dir="rtl"] h3, 
+[dir="rtl"] h4, 
+[dir="rtl"] h5, 
+[dir="rtl"] h6, 
+[dir="rtl"] p, 
+[dir="rtl"] span, 
+[dir="rtl"] div, 
+[dir="rtl"] button, 
+[dir="rtl"] a, 
+[dir="rtl"] input, 
+[dir="rtl"] textarea, 
+[dir="rtl"] label, 
+[dir="rtl"] li {
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif !important;
+}
+
+/* Form Elements - RTL */
+[dir="rtl"] input, 
+[dir="rtl"] textarea, 
+[dir="rtl"] select {
+  text-align: right;
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+}
+
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder {
+  text-align: right;
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+}
+
+/* Material UI Components - RTL */
+
+/* Form Controls */
+[dir="rtl"] .MuiFormControl-root .MuiInputLabel-root {
+  right: 0;
+  left: auto;
+  transform-origin: top right;
+}
+
+[dir="rtl"] .MuiInputBase-root .MuiInputAdornment-positionStart {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+[dir="rtl"] .MuiInputBase-root .MuiInputAdornment-positionEnd {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+/* Form validation messages */
+[dir="rtl"] .MuiFormHelperText-root {
+  text-align: right;
+  margin-right: 14px;
+  margin-left: 0;
+}
+
+/* Lists */
+[dir="rtl"] ul, 
+[dir="rtl"] ol {
+  padding-right: 20px;
+  padding-left: 0;
+}
+
+[dir="rtl"] .MuiList-root {
+  padding-right: 0;
+}
+
+/* Icons */
+[dir="rtl"] .rtl-icon,
+.rtl .rtl-icon {
+  transform: scaleX(-1);
+}
+
+/* Exceptions for icons */
+[dir="rtl"] .no-flip,
+.rtl .no-flip {
+  transform: none !important;
+}
+
+/* Dialogs */
+[dir="rtl"] .MuiDialog-paper {
+  text-align: right;
+}
+
+[dir="rtl"] .MuiDialogTitle-root {
+  text-align: right;
+}
+
+[dir="rtl"] .MuiDialogActions-root {
+  justify-content: flex-start;
+}
+
+/* Cards */
+[dir="rtl"] .MuiCard-root {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .MuiCardHeader-action {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Number Inputs */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+[dir="rtl"] input[type="number"] {
+  font-feature-settings: "tnum";
+  direction: rtl;
+}
+
+/* Persian Date Picker */
+.persian-datepicker .MuiPickersLayout-root {
+  direction: rtl;
+}
+
+.persian-datepicker .MuiPickersCalendarHeader-label,
+.persian-datepicker .MuiDayCalendar-weekDayLabel,
+.persian-datepicker .MuiPickersDay-root {
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+/* Tables */
+[dir="rtl"] .MuiTable-root {
+  direction: rtl;
+}
+
+[dir="rtl"] .MuiTableCell-head,
+[dir="rtl"] .MuiTableCell-body {
+  text-align: right;
+}
+
+/* Grid System */
+[dir="rtl"] .MuiGrid-container {
+  direction: rtl;
+}
+
+[dir="rtl"] .MuiGrid-container:not(.MuiGrid-item) > .MuiGrid-item {
+  text-align: right;
+}
+
+/* Flexbox Utilities */
+[dir="rtl"] .float-start, 
+[dir="rtl"] .float-left {
+  float: right !important;
+}
+
+[dir="rtl"] .float-end, 
+[dir="rtl"] .float-right {
+  float: left !important;
+}
+
+/* Margin and Padding Utilities */
+[dir="rtl"] .me-1, [dir="rtl"] .me-2, [dir="rtl"] .me-3, [dir="rtl"] .me-4, [dir="rtl"] .me-5,
+[dir="rtl"] .mr-1, [dir="rtl"] .mr-2, [dir="rtl"] .mr-3, [dir="rtl"] .mr-4, [dir="rtl"] .mr-5 {
+  margin-right: 0 !important;
+  margin-left: 0.25rem !important;
+}
+
+[dir="rtl"] .ms-1, [dir="rtl"] .ms-2, [dir="rtl"] .ms-3, [dir="rtl"] .ms-4, [dir="rtl"] .ms-5,
+[dir="rtl"] .ml-1, [dir="rtl"] .ml-2, [dir="rtl"] .ml-3, [dir="rtl"] .ml-4, [dir="rtl"] .ml-5 {
+  margin-left: 0 !important;
+  margin-right: 0.25rem !important;
+}
+
+/* Buttons */
+[dir="rtl"] .MuiButton-startIcon {
+  margin-left: 8px;
+  margin-right: -4px;
+}
+
+[dir="rtl"] .MuiButton-endIcon {
+  margin-right: 8px;
+  margin-left: -4px;
+}
+
+/* Select */
+[dir="rtl"] .MuiSelect-select {
+  text-align: right;
+  padding-right: 14px;
+  padding-left: 32px;
+}
+
+[dir="rtl"] .MuiSelect-icon {
+  right: auto;
+  left: 7px;
+}
+
+/* Form Control Label */
+[dir="rtl"] .MuiFormControlLabel-root {
+  margin-left: 0;
+  margin-right: -14px;
+}
+
+/* Transitions */
+.direction-changing * {
+  transition: none !important;
+}
+
+/* Force Directions */
+.force-rtl {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+.force-ltr {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  [dir="rtl"] .MuiGrid-item {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+  
+  [dir="rtl"] .MuiDialog-paper {
+    margin: 16px;
+  }
+  
+  [dir="rtl"] .MuiDrawer-paper {
+    width: 240px;
+  }
+}
+
+/* Persian Text Justification */
+[dir="rtl"] .persian-justified {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-text-justify: inter-word;
+}
+
+/* Menu Positioning */
+[dir="rtl"] .MuiMenu-paper {
+  text-align: right;
+}
+
+[dir="rtl"] .MuiMenuItem-root {
+  text-align: right;
+}
+
+/* Drawer Positioning */
+[dir="rtl"] .MuiDrawer-paper.MuiDrawer-paperAnchorRight {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .MuiDrawer-paper.MuiDrawer-paperAnchorLeft {
+  left: auto;
+  right: 0;
+}
+
+/* Checkbox and radio */
+[dir="rtl"] .MuiCheckbox-root,
+[dir="rtl"] .MuiRadio-root {
+  margin-right: -9px;
+  margin-left: 0;
+}
+
+/* Switch component */
+[dir="rtl"] .MuiSwitch-root {
+  margin-right: -9px;
+  margin-left: 0;
+}
+
+/* Autocomplete */
+[dir="rtl"] .MuiAutocomplete-input {
+  text-align: right;
+}
+
+/* Date picker */
+[dir="rtl"] .MuiPickersCalendarHeader-label {
+  text-align: right;
+}
+
+/* Tooltip */
+[dir="rtl"] .MuiTooltip-tooltip {
+  text-align: right;
+}
+
+/* Alert and snackbar */
+[dir="rtl"] .MuiAlert-message {
+  text-align: right;
+}
+
+/* Loading spinner */
+[dir="rtl"] .MuiCircularProgress-root {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Tabs */
+[dir="rtl"] .MuiTabs-indicator {
+  right: 0;
+  left: auto;
+}
+
+/* List components */
+[dir="rtl"] .MuiListItem-root {
+  text-align: right;
+}
+
+/* Card and paper components */
+[dir="rtl"] .MuiCardContent-root {
+  text-align: right;
+} 

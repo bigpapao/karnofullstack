@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  margin: 0;
+  font-family: 'Vazirmatn', 'IRANSans', Tahoma, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+  text-align: right;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: bidi-override;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* RTL fixes for various elements */
+input, textarea, select {
+  text-align: right;
+  direction: rtl;
+}
+
+input::placeholder, textarea::placeholder {
+  text-align: right;
+}
+
+/* Persian number formatting */
+.persian-digits {
+  font-feature-settings: "tnum";
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Flip specific RTL icons back to original */
+.MuiSvgIcon-root.no-flip {
+  transform: none !important;
+}
+
+/* Ensure proper spacing for RTL layouts */
+.MuiButton-startIcon {
+  margin-left: 8px;
+  margin-right: -4px;
+}
+
+.MuiButton-endIcon {
+  margin-right: 8px;
+  margin-left: -4px;
+}
+
+/* Persian price display */
+.persian-price {
+  font-feature-settings: "tnum";
+  direction: rtl;
+}

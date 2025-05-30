@@ -1,0 +1,61 @@
+{
+  "short_name": "کارنو",
+  "name": "کارنو | فروشگاه قطعات خودرو",
+  "description": "بزرگترین فروشگاه آنلاین قطعات خودرو با قیمت مناسب و کیفیت بالا",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#2e7d32",
+  "background_color": "#ffffff",
+  "categories": ["shopping", "automotive", "ecommerce"],
+  "dir": "rtl",
+  "lang": "fa-IR",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "جستجوی محصولات",
+      "short_name": "جستجو",
+      "description": "جستجو در محصولات کارنو",
+      "url": "/products?source=pwa",
+      "icons": [{ "src": "icons/search.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "سبد خرید",
+      "short_name": "سبد",
+      "description": "مشاهده سبد خرید",
+      "url": "/cart?source=pwa",
+      "icons": [{ "src": "icons/cart.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [],
+  "screenshots": [
+    {
+      "src": "screenshots/home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "صفحه اصلی کارنو"
+    },
+    {
+      "src": "screenshots/products.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "محصولات کارنو"
+    },
+    {
+      "src": "screenshots/product-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "نسخه موبایل جزئیات محصول"
+    }
+  ]
+}

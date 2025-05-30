@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- 
+  Note: The lang and dir attributes here provide the initial/default settings,
+  but can be overridden dynamically by the RTLWrapper component when direction changes.
+  The RTLWrapper component will update these attributes at runtime based on user preference.
+-->
+<html lang="fa" dir="rtl">
+  <head>
+    <!-- Google Analytics - Updated for first-party context -->
+    <script>
+      // The ID will be replaced during build with the actual value from env vars
+      window.GA_MEASUREMENT_ID = '%REACT_APP_GA_MEASUREMENT_ID%';
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GA_MEASUREMENT_ID%"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '%REACT_APP_GA_MEASUREMENT_ID%', {
+        send_page_view: false, // We'll handle this with react-ga4
+        cookie_flags: 'SameSite=None;Secure'
+      });
+    </script>
+    <!-- End Google Analytics -->
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Theme color meta tags (Chrome/Edge/Safari only - Firefox/Opera use the theme_color from manifest.json) -->
+    <meta name="theme-color" content="#2C3E50" />
+    <meta name="msapplication-navbutton-color" content="#2C3E50" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2C3E50" />
+    <meta
+      name="description"
+      content="کارنو - فروشگاه آنلاین قطعات خودرو | خرید قطعات اصلی و با کیفیت خودرو"
+      data-react-helmet="true"
+    />
+    <meta name="keywords" content="قطعات خودرو، لوازم یدکی، اکسسوری خودرو، قطعات یدکی، فروشگاه آنلاین، کارنو" />
+    <meta name="author" content="Karno.ir" />
+    <meta name="robots" content="index, follow" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Persian Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Default Font Fallback -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <title>کارنو | فروشگاه آنلاین قطعات خودرو</title>
+    
+    <style>
+      /* Base styles for both directions */
+      body {
+        font-family: 'Vazirmatn', 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* RTL specific styles */
+      html[dir="rtl"] body {
+        direction: rtl;
+        text-align: right;
+        font-family: 'Vazirmatn', 'Roboto', sans-serif;
+      }
+      
+      /* LTR specific styles */
+      html[dir="ltr"] body {
+        direction: ltr;
+        text-align: left;
+        font-family: 'Roboto', 'Vazirmatn', sans-serif;
+      }
+      
+      /* Fix for Material-UI RTL rendering */
+      html[dir="rtl"] .MuiPopover-root .MuiPopover-paper,
+      html[dir="rtl"] .MuiMenu-paper,
+      html[dir="rtl"] .MuiDrawer-paper {
+        direction: rtl;
+      }
+
+      /* Fix for Material-UI LTR rendering */
+      html[dir="ltr"] .MuiPopover-root .MuiPopover-paper,
+      html[dir="ltr"] .MuiMenu-paper,
+      html[dir="ltr"] .MuiDrawer-paper {
+        direction: ltr;
+      }
+      
+      /* Handle input placeholder alignment */
+      html[dir="rtl"] input::placeholder,
+      html[dir="rtl"] textarea::placeholder {
+        text-align: right;
+      }
+
+      html[dir="ltr"] input::placeholder,
+      html[dir="ltr"] textarea::placeholder {
+        text-align: left;
+      }
+      
+      /* Persian numbers for inputs */
+      html[dir="rtl"] input[type="number"],
+      html[dir="rtl"] input[type="text"],
+      html[dir="rtl"] input[type="tel"],
+      html[dir="rtl"] input[type="password"] {
+        font-feature-settings: "tnum";
+        text-align: right;
+      }
+
+      html[dir="ltr"] input[type="number"],
+      html[dir="ltr"] input[type="text"],
+      html[dir="ltr"] input[type="tel"],
+      html[dir="ltr"] input[type="password"] {
+        text-align: left;
+      }
+
+      /* Fix for RTL tables */
+      html[dir="rtl"] .MuiTable-root th,
+      html[dir="rtl"] .MuiTable-root td {
+        text-align: right;
+      }
+
+      html[dir="ltr"] .MuiTable-root th,
+      html[dir="ltr"] .MuiTable-root td {
+        text-align: left;
+      }
+
+      /* Fix for instant direction changing without flickering */
+      #root {
+        transition: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>برای مشاهده این وب‌سایت، لطفا جاوااسکریپت مرورگر خود را فعال کنید.</noscript>
+    <div id="root"></div>
+    
+    <!-- Support script for direction changes -->
+    <script>
+      // This will help with fast initial rendering
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check if there's a stored language preference
+        const storedLang = localStorage.getItem('language');
+        if (storedLang === 'en') {
+          document.documentElement.setAttribute('lang', 'en');
+          document.documentElement.setAttribute('dir', 'ltr');
+          
+          // Update noscript message for English
+          const noscript = document.querySelector('noscript');
+          if (noscript) {
+            noscript.textContent = 'To view this website, please enable JavaScript in your browser.';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
